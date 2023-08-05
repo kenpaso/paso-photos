@@ -55,12 +55,12 @@ export default function SharedModal({
       }}
     >
       <div
-        className="relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center wide:h-full xl:taller-than-854:h-auto"
+        className="relative z-50 flex aspect-[3/2] w-full lg:taller-than-854:w-3/6 max-w-7xl items-center wide:h-full lg:taller-than-854:h-full"
         {...handlers}
       >
         {/* Main image */}
-        <div className="w-full overflow-hidden">
-          <div className="relative flex aspect-[3/2] items-center justify-center">
+        <div className="w-full overflow-hidden lg:taller-than-854:flex lg:taller-than-854:items-center lg:taller-than-854:justify-center">
+          <div className="relative flex aspect-[4/5] items-center justify-center lg:taller-than-854:h-[1000px]">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={index}
@@ -80,7 +80,7 @@ export default function SharedModal({
                   width={navigation ? 1280 : 1920}
                   height={navigation ? 853 : 1280}
                   priority
-                  alt="Next.js Conf image"
+                  alt="kenpaso.com"
                   onLoadingComplete={() => setLoaded(true)}
                 />
               </motion.div>
@@ -115,7 +115,7 @@ export default function SharedModal({
                   )}
                 </>
               )}
-              <div className="absolute top-0 right-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[-100px] sm:top-0 right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
                     href={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`}
@@ -134,10 +134,10 @@ export default function SharedModal({
                     title="Open fullsize version"
                     rel="noreferrer"
                   >
-                    <Twitter className="h-5 w-5" />
+                    {/* <Twitter className="h-5 w-5" /> */}
                   </a>
                 )}
-                <button
+                {/* <button
                   onClick={() =>
                     downloadPhoto(
                       `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${currentImage.public_id}.${currentImage.format}`,
@@ -148,15 +148,15 @@ export default function SharedModal({
                   title="Download fullsize version"
                 >
                   <ArrowDownTrayIcon className="h-5 w-5" />
-                </button>
+                </button> */}
               </div>
-              <div className="absolute top-0 left-0 flex items-center gap-2 p-3 text-white">
+              <div className="absolute top-[-100px] sm:top-0 left-0 flex items-center gap-2 p-3 text-white">
                 <button
                   onClick={() => closeModal()}
                   className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
                 >
                   {navigation ? (
-                    <XMarkIcon className="h-5 w-5" />
+                    <XMarkIcon className="h-5 w-5 " />
                   ) : (
                     <ArrowUturnLeftIcon className="h-5 w-5" />
                   )}

@@ -7,3 +7,13 @@
     clip-path: inset(0.6px);
   }
 }
+
+@font-face {
+  font-family: "W95FA";
+  src: url("../public/fonts/W95FA.otf");
+}
+
+@font-face {
+  font-family: "Road_Rage";
+  src: url("../public/fonts/Road_Rage.otf");
+}

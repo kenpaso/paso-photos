@@ -7,8 +7,7 @@ import cloudinary from '../../utils/cloudinary'
 import getBase64ImageUrl from '../../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../../utils/types'
 
-
-const folder = "portfolio"
+const folder = "cars"
 const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const router = useRouter()
   const { photoId } = router.query

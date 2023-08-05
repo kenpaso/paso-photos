@@ -8,9 +8,13 @@ import SharedModal from './SharedModal'
 
 export default function Modal({
   images,
+  folder,
+  close,
   onClose,
 }: {
   images: ImageProps[]
+  folder: string
+  close: string
   onClose?: () => void
 }) {
   let overlayRef = useRef()
@@ -23,7 +27,7 @@ export default function Modal({
   const [curIndex, setCurIndex] = useState(index)
 
   function handleClose() {
-    router.push('/', undefined, { shallow: true })
+    router.push(`/${close}`, undefined, { shallow: true })
     onClose()
   }
 
@@ -38,7 +42,7 @@ export default function Modal({
       {
         query: { photoId: newVal },
       },
-      `/p/${newVal}`,
+      `/${folder}/${newVal}`,
       { shallow: true }
     )
   }

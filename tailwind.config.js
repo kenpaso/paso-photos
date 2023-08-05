@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        W95FA: ['W95FA', 'sans-serif'],
+        road: ['Road_Rage']
+      },
       boxShadow: {
         highlight: 'inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
       },

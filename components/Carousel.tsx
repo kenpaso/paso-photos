@@ -8,16 +8,18 @@ import SharedModal from './SharedModal'
 export default function Carousel({
   index,
   currentPhoto,
+  folder
 }: {
   index: number
   currentPhoto: ImageProps
+  folder: String
 }) {
   const router = useRouter()
   const [, setLastViewedPhoto] = useLastViewedPhoto()
 
   function closeModal() {
     setLastViewedPhoto(currentPhoto.id)
-    router.push('/', undefined, { shallow: true })
+    router.push(`/${folder}`, undefined, { shallow: true })
   }
 
   function changePhotoId(newVal: number) {
