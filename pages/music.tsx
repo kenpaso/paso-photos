@@ -14,7 +14,7 @@ import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 
-const folder = "cars"
+const folder = "music"
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
   const { photoId } = router.query;
@@ -41,7 +41,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           <Modal
             images={images}
             folder={folder}
-            close="cars"
+            close="music"
             onClose={() => {
               setLastViewedPhoto(photoId);
             }}
@@ -52,8 +52,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           {images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
               key={id}
-              href={`/cars/?photoId=${id}`}
-              as={`/cars/${id}`}
+              href={`/music/?photoId=${id}`}
+              as={`/music/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
               className="after:content group relative mb-2 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
