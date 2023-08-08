@@ -5,7 +5,7 @@ export default function Navbar() {
     { name: "portraits", link: "/" },
     { name: "cars", link: "/cars" },
     { name: "music", link: "/music" },
-    // { name: "contact", link: "/contact" },
+    { name: "contact", link: "/contact" },
   ];
   const [isOpen, setIsOpen] = useState(false);
   return (
