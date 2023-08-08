@@ -47,7 +47,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
             }}
           />
         )}
-        <div className="columns-1 gap-3 sm:columns-2 xl:columns-3 2xl:columns-4">
+        <div className="columns-1 gap-2 sm:columns-2 xl:columns-3 2xl:columns-4">
         {/* <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 2xl:gap-1"> */}
           {images.map(({ id, public_id, format, blurDataUrl }) => (
             <Link
