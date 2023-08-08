@@ -6,9 +6,19 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta property="og:title" content="Built by Kenneth Galang" />
+          <meta
+            name="description"
+            content="Built by Kenneth Galang"
+          />
+          <meta property="og:site_name" content="kenpaso.com" />
+          <meta
+            property="og:description"
+            content="Built by Kenneth Galang"
+          />
+          <meta property="og:title" content="kenpaso.com" />
+          
         </Head>
-        <body className="bg-white antialiased">
+        <body className="bg-black antialiased">
           <Main />
           <NextScript />
         </body>
