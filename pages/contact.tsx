@@ -29,8 +29,11 @@ const Home: NextPage = () => {
           myself.
         </p>
         <p className="text-md mt-2 max-w-[480px]  font-thin">
+          That's it. I just like it.
+        </p> 
+        {/* <p className="text-md mt-2 max-w-[480px]  font-thin">
           That's it. I'm just an overthinker.
-        </p>
+        </p> */}
 
         <a
           href="mailto:hello@kenpaso.com"
