@@ -15,9 +15,9 @@ class MyDocument extends Document {
             property="og:description"
             content="Built by Kenneth Galang"
           />
-          <meta property="og:title" content="kenpaso.com" />
+          <meta property="og:title" content="the portfolio of paso" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="kenpaso.com" />
+          <meta name="twitter:title" content="the portfolio of paso" />
           <meta
             name="twitter:description"
             content="Built by Kenneth Galang"
