@@ -2,7 +2,8 @@ import { BsInstagram } from "react-icons/bs";
 import React, { useState } from "react";
 export default function Navbar() {
   let Links = [
-    { name: "portraits", link: "/" },
+    { name: "start", link: "/" },
+    { name: "portraits", link: "/portraits" },
     { name: "cars", link: "/cars" },
     { name: "music", link: "/music" },
     { name: "contact", link: "/contact" },
