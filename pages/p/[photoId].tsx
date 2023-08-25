@@ -8,7 +8,7 @@ import getBase64ImageUrl from '../../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../../utils/types'
 
 
-const folder = "portfolio"
+const folder = "portraits"
 const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const router = useRouter()
   const { photoId } = router.query
@@ -35,7 +35,8 @@ export default Home
 export const getStaticProps: GetStaticProps = async (context) => {
   const results = await getResults(folder)
 
-  let reducedResults: ImageProps[] = []
+  if(results){
+    let reducedResults: ImageProps[] = []
   let i = 0
   for (let result of results.resources) {
     reducedResults.push({
@@ -58,6 +59,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       currentPhoto: currentPhoto,
     },
   }
+  }
+  
 }
 
 export async function getStaticPaths() {

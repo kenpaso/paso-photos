@@ -33,8 +33,9 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const results = await getResults(folder)
-
-  let reducedResults: ImageProps[] = []
+  
+  if(results){
+    let reducedResults: ImageProps[] = []
   let i = 0
   for (let result of results.resources) {
     reducedResults.push({
@@ -57,6 +58,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       currentPhoto: currentPhoto,
     },
   }
+  }
 }
 
 export async function getStaticPaths() {
@@ -73,6 +75,6 @@ export async function getStaticPaths() {
 
   return {
     paths: fullPaths,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
