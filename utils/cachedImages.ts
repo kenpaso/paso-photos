@@ -5,7 +5,7 @@ let cachedResults
 export default async function getResults(folder:string) {
   if (!cachedResults) {
     const fetchedResults = await cloudinary.v2.search
-      .expression(`folder:${folder}/*`)
+      .expression(`folder:${process.env.CLOUDINARY_FOLDER}/${folder}/*`)
       .sort_by('created_at', 'desc')
       .max_results(400)
       .execute()
