@@ -32,32 +32,51 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
 export default Home
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const results = await getResults(folder)
-  if(results){
-    let reducedResults: ImageProps[] = []
-  let i = 0
-  for (let result of results.resources) {
-    reducedResults.push({
-      id: i,
-      height: result.height,
-      width: result.width,
-      public_id: result.public_id,
-      format: result.format,
-    })
-    i++
-  }
+  try {
+    const results = await cloudinary.v2.search
+    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/${folder}*`)
+    .sort_by('created_at', 'desc')
+    .max_results(400)
+    .execute();
 
-  const currentPhoto = reducedResults.find(
-    (img) => img.id === Number(context.params.photoId)
-  )
-  currentPhoto.blurDataUrl = await getBase64ImageUrl(currentPhoto)
+    if (results) {
+      // ... processing code
+      let reducedResults: ImageProps[] = []
+    reducedResults = results.resources.map((result, index) => {
+      if (result.public_id) {
+        return {
+          id: index,
+          height: result.height,
+          width: result.width,
+          public_id: result.public_id,
+          format: result.format,
+        };
+      } else {
+        // Handle the case where public_id is undefined
+        return null; // or some default value
+      }
+    }).filter(result => result !== null);
+    const currentPhoto = reducedResults.find(
+      (img) => img.id === Number(context.params.photoId)
+    )
+      currentPhoto.blurDataUrl = await getBase64ImageUrl(currentPhoto);
 
-  return {
-    props: {
-      currentPhoto: currentPhoto,
-    },
+      return {
+        props: {
+          currentPhoto: currentPhoto,
+        },
+      };
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    // Handle error appropriately
+    return {
+      props: {
+        currentPhoto: null, // or some default value
+      },
+    };
   }
-  }
+  
 }
 
 export async function getStaticPaths() {
@@ -74,6 +93,6 @@ export async function getStaticPaths() {
 
   return {
     paths: fullPaths,
-    fallback: "blocking",
+    fallback: false,
   }
 }

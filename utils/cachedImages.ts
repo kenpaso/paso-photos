@@ -12,6 +12,8 @@ export default async function getResults(folder:string) {
 
     cachedResults = fetchedResults
   }
+  console.log("------------cachhes")
   console.log(cachedResults)
+  console.log("------------cachhesend")
   return cachedResults
 }
