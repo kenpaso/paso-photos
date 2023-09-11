@@ -29,12 +29,32 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-        <div className="block w-full flex-grow sm:flex sm:w-auto sm:items-center">
+        <div className="hidden w-full flex-grow sm:flex sm:w-auto sm:items-center">
           <div className={`text-md  ${isOpen ? 'inline-block' : 'hidden'}  sm:inline-block sm:flex-grow `}>
             {Links.map((link) => (
               <a
                 href={link.link}
                 className="mr-4 mt-4 block text-black hover:underline sm:mt-0 sm:inline-block"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <div className={`${isOpen ? ' `block' : 'hidden'}  sm:block `}>
+            <a
+              href="https://www.instagram.com/kenpaso_/"
+              className="text-md mt-4 inline-block rounded border border-white pr-0 leading-none text-black hover:border-transparent hover:bg-white hover:text-gray-600 sm:mt-0 sm:pt-1 sm:text-lg  sm:pr-0"
+            >
+              <BsInstagram />
+            </a>
+          </div>
+        </div>
+        <div className="flex flex-col items-center w-full flex-grow sm:hidden sm:w-auto sm:items-center">
+          <div className={`text-md  ${isOpen ? 'inline-block' : 'hidden'}  sm:inline-block sm:flex-grow `}>
+            {Links.map((link) => (
+              <a
+                href={link.link}
+                className="mt-4 block text-black text-center hover:underline sm:mt-0 sm:inline-block"
               >
                 {link.name}
               </a>
