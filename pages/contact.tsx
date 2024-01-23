@@ -14,11 +14,16 @@ const Home: NextPage = () => {
       <main className="mx-auto mt-10 flex h-[60vh] max-w-[1200px] flex-col  px-6">
         <h2 className="mb-4 text-3xl font-bold">contact</h2>
         <p className="max-w-[480px] text-lg font-thin">
-          Hello World! I'm paso. Based in San Francisco, CA. I like to document
+          Hello! I'm kenneth/paso. Based in San Francisco, CA. I like to document
           my experiences and take pics.
         </p>
 
         <p className="mt-6 max-w-[480px] text-lg  font-normal">
+          I shoot concerts, portraits, and events.
+        </p>
+
+
+        {/* <p className="mt-6 max-w-[480px] text-lg  font-normal">
           why kenpaso/paso?
         </p>
         <p className="text-md max-w-[480px] font-thin">
@@ -30,7 +35,7 @@ const Home: NextPage = () => {
         </p>
         <p className="text-md mt-2 max-w-[480px]  font-thin">
           That's it. I just like it.
-        </p> 
+        </p>  */}
         {/* <p className="text-md mt-2 max-w-[480px]  font-thin">
           That's it. I'm just an overthinker.
         </p> */}
@@ -38,7 +43,7 @@ const Home: NextPage = () => {
         <a
           href="mailto:hello@kenpaso.com"
           target="_blank"
-          className="mb-4 mt-10 max-w-[490px] text-lg font-thin underline underline-offset-8 hover:text-slate-500"
+          className="mb-4 mt-6 max-w-[490px] text-lg font-thin underline underline-offset-8 hover:text-slate-500"
           rel="noreferrer"
         >
           hello@kenpaso.com
